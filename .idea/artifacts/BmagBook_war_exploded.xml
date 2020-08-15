@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="BmagBook:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/BmagBook_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="BmagBook/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BmagBook" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="gson-2.8.6" />
+          <element id="library" level="application" name="mysql-connector-java-5.1.49" />
+          <element id="library" level="application" name="jstl-1.2" />
+          <element id="library" level="application" name="javax.xml.bind" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
