@@ -20,9 +20,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.36" level="application_server_libraries" />
-    <orderEntry type="library" name="gson-2.8.6" level="application" />
     <orderEntry type="library" name="mysql-connector-java-5.1.49" level="project" />
     <orderEntry type="library" name="jstl-1.2" level="project" />
-    <orderEntry type="library" name="javax.xml.bind" level="application" />
+    <orderEntry type="library" name="javax.xml.bind" level="project" />
+    <orderEntry type="library" name="gson-2.8.6" level="project" />
   </component>
 </module>

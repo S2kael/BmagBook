@@ -8,10 +8,10 @@
           <element id="module-output" name="BmagBook" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="application" name="gson-2.8.6" />
-          <element id="library" level="application" name="mysql-connector-java-5.1.49" />
-          <element id="library" level="application" name="jstl-1.2" />
-          <element id="library" level="application" name="javax.xml.bind" />
+          <element id="library" level="project" name="javax.xml.bind" />
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="gson-2.8.6" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.49" />
         </element>
       </element>
     </root>
