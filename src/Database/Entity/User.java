@@ -103,10 +103,20 @@ public class User {
         List<Friend> friendList = friendDao.getListFriend(id);
         for (Friend friend: friendList
              ) {
-            int tmpId = friend.getMe() == id ? friend.getFriend_to() : friend.getMe();
+            int tmpId = friend.getFriend_to();
             result.add(userDao.getTempUser(tmpId).get());
         }
         return result;
     }
 
+    public List<User> getSuggestedFriend(){
+        List<User> result = new ArrayList<>();
+        UserDao userDao = new UserDao();
+        List<Integer> listID = userDao.getSuggestedFriend(this.id);
+        for (Integer id: listID
+        ) {
+            result.add(userDao.getTempUser(id).get());
+        }
+        return result;
+    }
 }

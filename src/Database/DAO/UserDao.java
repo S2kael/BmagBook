@@ -5,6 +5,8 @@ import Database.Entity.User;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class UserDao{
@@ -210,5 +212,24 @@ public class UserDao{
             throwables.printStackTrace();
         }
         return id;
+    }
+
+    public List<Integer> getSuggestedFriend(int me) {
+        List<Integer> list = new ArrayList<>();
+        String select = "SELECT id FROM bmagbook.tbl_profile "
+                + "where id != ? and id not in "
+                + "(select friend_to from tbl_friends where me = ?)";
+        try {
+            PreparedStatement pStmt = conn.prepareStatement(select);
+            pStmt.setInt(1, me);
+            pStmt.setInt(2, me);
+            ResultSet rs = pStmt.executeQuery();
+            while (rs.next()) {
+                list.add(rs.getInt("id"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

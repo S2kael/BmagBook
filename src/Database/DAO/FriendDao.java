@@ -17,10 +17,9 @@ public class FriendDao {
         ArrayList<Friend> result = new ArrayList<>();
         try {
             PreparedStatement st;
-            String sql = "Select * From " + TABLE + " WHERE me = ? or friend_to = ?";
+            String sql = "Select * From " + TABLE + " WHERE me = ?";
             st = conn.prepareStatement(sql);
             st.setInt(1,id);
-            st.setInt(2,id);
             ResultSet rs = st.executeQuery();
             if (rs.first()) {
                 do {
@@ -37,4 +36,19 @@ public class FriendDao {
         }
         return result;
     }
+
+    public void addFriend(int me, int friend) {
+        try {
+            PreparedStatement st;
+            String sql = "Insert into tbl_friends Values(null,?,?)";
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setInt(1, me);
+            pStmt.setInt(2, friend);
+            pStmt.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+
 }

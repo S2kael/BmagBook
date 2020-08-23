@@ -744,6 +744,7 @@ span.like-icon-small {
 
 .friend-item> img {
     height: 60px !important;
+    width: 60px !important;
 }
 
 .friend-item> span button {
